@@ -1,0 +1,25 @@
+.mission-section {
+  padding: 6rem 0;
+  background-color: var(--soft-cream-bg);
+}
+
+.mission-box {
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 800px; /* Constrain width for readability */
+  margin: 0 auto 2rem auto; /* Center the box and add space below */
+}
+
+.mission-box h3 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--dark-brown);
+  margin-bottom: 1.5rem;
+}
+
+.mission-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}

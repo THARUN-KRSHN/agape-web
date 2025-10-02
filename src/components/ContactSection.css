@@ -1,0 +1,18 @@
+.contact-section-wrapper { padding: 4rem 0; background-color: var(--soft-cream-bg); }
+.contact-section { border: 1.5px solid var(--golden-tan); border-radius: 20px; padding: 3rem; }
+.contact-header { text-align: center; }
+.contact-header h3 { font-family: 'EB Garamond', serif; font-size: 3rem; }
+.contact-header p { max-width: 600px; margin: 1rem auto; }
+.social-icons img { width: 40px; margin: 0 10px; }
+.form-label { font-family: 'EB Garamond', serif; }
+.form-control { border-color: var(--golden-tan); background-color: #fff; }
+.form-control:focus { box-shadow: 0 0 0 0.25rem rgba(186, 151, 95, 0.25); border-color: var(--golden-tan); }
+.submit-btn { width: 100%; padding: 12px; background-color: var(--dark-brown); border: none; font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+.accordion-item, .accordion-button, .accordion-body { background-color: transparent !important; }
+.accordion-button { color: var(--dark-brown) !important; font-family: 'EB Garamond', serif; font-size: 1.2rem; background-color: #F8F2E7 !important; border-radius: 50px !important; margin-bottom: 10px; }
+.accordion-button:not(.collapsed) { box-shadow: none; }
+.accordion-button:focus { box-shadow: none; }
+.accordion-button::after { display: none; } /* Hides default chevron */
+.accordion-button::before { content: '+'; font-size: 1.5rem; margin-right: 10px; }
+.accordion-button:not(.collapsed)::before { content: '−'; }
+.accordion-body { padding-left: 2.5rem; }

@@ -1,0 +1,62 @@
+/* You can name this StoriesSection.css, SurveysSection.css, or PromoSections.css */
+
+.promo-section-wrapper {
+  padding: 4rem 0;
+  background-color: var(--soft-cream-bg);
+}
+
+.promo-section {
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.promo-image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.promo-content {
+  padding-left: 3rem;
+}
+
+/* For the Surveys section, swap padding */
+.surveys-section .promo-content {
+    padding-left: 10px;
+    padding-right: 3rem;
+}
+
+.promo-heading {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 4rem;
+  color: var(--dark-brown);
+  margin-bottom: 1.5rem;
+}
+
+.promo-heading span {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--muted-teal);
+  display: block; /* Makes the span go to the next line */
+  font-size: 5rem;
+}
+
+.promo-btn {
+  background-color: var(--dark-brown);
+  border: none;
+  font-family: 'EB Garamond', serif;
+  padding: 10px 25px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+.promo-btn:hover {
+  background-color: var(--deep-teal-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .promo-content, .surveys-section .promo-content {
+    padding: 2rem 0 0 0 !important; /* Add padding top on mobile */
+    text-align: center;
+  }
+}

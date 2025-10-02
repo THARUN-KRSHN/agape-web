@@ -1,0 +1,78 @@
+.about-section {
+  padding: 6rem 0; /* Generous padding for spacing */
+  background-color: var(--soft-cream-bg);
+}
+
+/* --- Vertical Text Column --- */
+.vertical-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+  line-height: 1.1;
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 1rem 0;
+}
+
+/* --- Logo Column --- */
+.logo-column {
+  text-align: center;
+  padding: 2rem;
+  border-left: 1.5px solid var(--golden-tan);
+  border-right: 1.5px solid var(--golden-tan);
+}
+.about-logo {
+  max-width: 200px; /* Control the size of the logo */
+}
+
+/* --- Description Column --- */
+.description-column {
+  padding-left: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+.learn-more-btn {
+  background-color: var(--dark-brown);
+  border: none;
+  font-family: 'EB Garamond', serif;
+  padding: 10px 25px;
+  margin-top: 1rem;
+}
+.learn-more-btn:hover {
+  background-color: var(--deep-teal-hover);
+}
+
+/* --- Footer Info --- */
+.footer-info-row {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  color: var(--dark-brown);
+}
+.footer-info-row p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.footer-info-row ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+.footer-info-row li {
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-column, .description-column {
+    border: none; /* Remove borders on mobile */
+    padding: 1rem 0;
+  }
+}

@@ -1,0 +1,6 @@
+.footer { padding: 3rem 0; background-color: var(--soft-cream-bg); border-top: 1.5px solid var(--golden-tan); }
+.footer-logo { max-width: 150px; }
+.footer h4 { font-family: 'EB Garamond', serif; font-weight: 600; color: var(--dark-brown); }
+.footer ul { list-style-type: none; padding: 0; }
+.footer ul a { color: var(--dark-brown); text-decoration: none; transition: color 0.3s ease; }
+.footer ul a:hover { color: var(--muted-teal); }

@@ -1,0 +1,38 @@
+/* src/index.css */
+
+/* --- FONT IMPORTS FROM GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Great+Vibes&family=Libre+Baskerville:wght@700&family=Roboto+Slab&display=swap');
+
+/* font-family: 'EB Garamond', serif;      (For headings)
+font-family: 'Great Vibes', cursive;    (For the main cursive heading)
+font-family: 'Libre Baskerville', serif; (For strong emphasis text)
+font-family: 'Roboto Slab', serif;       (For body text/paragraphs)
+*/
+
+/* --- COLOR PALETTE AS CSS VARIABLES --- */
+:root {
+  --dark-brown: #443224;
+  --muted-gold: #BA975F;
+  --golden-tan: #AD8E57;
+  --soft-cream-bg: #EEE2CA; /* Main Background */
+  --muted-teal: #2E5352;
+  --deep-teal-hover: rgb(42, 79, 83);
+  --very-dark-brown-border: rgb(62, 39, 35);
+}
+
+/* --- GLOBAL STYLES --- */
+body {
+  margin: 0;
+  /* Sets the default background color for the entire application */
+  background-color: var(--soft-cream-bg); 
+
+  /* Sets the default font for paragraphs and general text */
+  font-family: 'Roboto Slab', serif;
+
+  /* Sets the default text color */
+  color: var(--dark-brown);
+
+  /* Helps in rendering fonts smoothly */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

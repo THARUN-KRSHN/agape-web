@@ -1,0 +1,63 @@
+.hero-section {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 100px !important; /* Added !important as a test */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  border: 1.5px solid var(--golden-tan);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* All other styles are the same */
+.hero-headline {
+  font-family: 'Great Vibes', cursive;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+}
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.hero-description strong {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--muted-teal);
+}
+.hero-button {
+  background-color: var(--dark-brown);
+  color: var(--soft-cream-bg);
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+}
+.hero-button:hover {
+  background-color: var(--deep-teal-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.hero-scroll-prompt {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .hero-headline { font-size: 4rem; }
+  .hero-content { padding: 2rem 1rem; }
+  .hero-description, .hero-scroll-prompt { font-size: 1rem; }
+}

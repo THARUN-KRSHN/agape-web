@@ -1,0 +1,41 @@
+/* src/components/Header.css */
+
+/* Style the main navbar container */
+.agape-nav {
+  /* Use the soft cream background color from our global variables */
+  background-color: var(--soft-cream-bg) !important; 
+  /* Add a subtle shadow to lift it off the page */
+  box-shadow: 0 2px 5px rgba(42, 79, 83, 0.5);
+  /* Add padding for spacing */
+  padding: 0.2rem 0;
+  top: 0 !important;
+}
+
+/* Style the individual navigation links */
+.agape-nav .nav-link {
+  /* Set the text color */
+  color: var(--dark-brown) !important; 
+  /* Use the EB Garamond font for a classic look */
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  /* Add space between the links */
+  margin-left: 20px;
+  /* Add a smooth transition for hover effects */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Style for the link when the mouse hovers over it */
+.agape-nav .nav-link:hover {
+  /* Use the muted teal color on hover for an accent */
+  color: var(--muted-teal) !important;
+}
+
+/* Ensure the navbar toggle (hamburger icon) is styled correctly */
+.navbar-toggler {
+    border-color: var(--dark-brown) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(68, 50, 36, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

@@ -1,0 +1,60 @@
+/* src/components/TestimonialsSection.css */
+
+.testimonials-section {
+  padding: 6rem 0;
+  background-color: var(--soft-cream-bg);
+  text-align: center;
+}
+.testimonials-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+}
+.testimonials-subtitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  color: var(--muted-teal);
+  margin-bottom: 3rem;
+}
+
+/* --- NEW MARQUEE STYLES --- */
+
+/* The outer container, our "viewport" */
+.testimonials-marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+/* The inner container that holds all the cards and moves */
+.testimonials-track {
+  display: flex;
+  /* Double the width since we duplicated the content */
+  width: calc(200% + 3rem); 
+  gap: 1.5rem;
+}
+
+/* A wrapper for each card to control its size */
+.testimonial-card-wrapper {
+  /* Each card takes up 1/4 of the original content width */
+  width: 25%; 
+  flex-shrink: 0;
+}
+
+.testimonial-card {
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--soft-cream-bg);
+}
+/* ... rest of the card styles are the same ... */
+.testimonial-card .quote { font-size: 1.2rem; font-style: italic; flex-grow: 1; }
+.testimonial-card .author { font-weight: bold; font-size: 1rem; line-height: 1.4; }
+.testimonial-card .author span { font-weight: normal; font-size: 0.9rem; color: #6c757d; }
