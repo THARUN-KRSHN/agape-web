@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Form, Button, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Form, Accordion } from 'react-bootstrap';
 import './ContactSection.css';
 
 // 3. Add your social logos to src/assets/images
@@ -29,7 +29,7 @@ const ContactSection = () => {
                 <Col md={6}><Form.Group className="mb-3"><Form.Label>Email</Form.Label><Form.Control type="email" placeholder="jane@fromer.com" /></Form.Group></Col>
               </Row>
               <Form.Group className="mb-3"><Form.Label>Message</Form.Label><Form.Control as="textarea" rows={4} placeholder="Your message..." /></Form.Group>
-              <Button type="submit" className="submit-btn">Submit</Button>
+              <button type="submit" className="submit-btn">Submit</button>
             </Form>
           </Col>
           {/* Column 2: Accordion FAQ */}

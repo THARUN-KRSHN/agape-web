@@ -1,0 +1,104 @@
+.survey-page-title { font-family: 'EB Garamond', serif; font-size: 2rem; }
+.survey-page-title span { font-family: 'Libre Baskerville', serif; color: var(--muted-teal); }
+.survey-header {
+    margin-top: -10px;
+    height: 150px;
+}
+.header-tagline {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--deep-teal-hover) !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.survey-questions-page {
+  background-color: var(--soft-cream-bg);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.survey-box {
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 3rem 4rem;
+  background-color: #F8F2E7;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px; /* Adjust based on header height */
+}
+
+/* Progress Bar */
+.progress-container {color:var(--dark-brown); display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+.survey-progress-bar { color:var(--dark-brown);height: 10px; width: 100%;background-color: #EFE6D8; }
+.progress-bar { background-color: var(--dark-brown);color: var(--dark-brown) }
+
+/* Question Text */
+.question-text { font-family: 'EB Garamond', serif; font-size: 2.5rem; font-weight: 600; min-height: 120px; }
+
+/* Custom Slider */
+.slider-container { position: relative; margin: 3rem 0; padding: 0 1rem;}
+.slider-labels { display: flex; justify-content: space-between; position: relative; margin-top: 1rem; }
+.slider-label { font-size: 0.9rem; text-align: center; width: 100px; }
+
+/* Styling the range input */
+.response-slider { -webkit-appearance: none;
+   width: 100%; 
+   height: 10px; 
+   background: var(--golden-tan); 
+   outline: none; 
+   border-radius: 15px;
+   cursor: pointer;
+   appearance: none;
+  }
+/* The slider thumb (circle) */
+.response-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--golden-tan); /* Same color as the track to merge them */
+  border: 2px solid var(--dark-brown); /* A thin border for definition */
+  margin-top: -7px; /* Vertically centers the thumb on the new track height */
+
+  /* The "droplet" effect using shadows */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25); 
+
+  transition: transform 0.1s ease-in-out;
+}
+.response-slider::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+.response-slider::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--golden-tan);
+  border: 2px solid var(--dark-brown);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: transform 0.1s ease-in-out;
+}
+
+.response-slider::-moz-range-thumb:active {
+    transform: scale(1.2);
+}
+
+/* Add the dots on the track */
+
+
+/* Navigation */
+.navigation-buttons { margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; }
+.nav-btn { font-family: 'EB Garamond', serif; font-size: 1.2rem; padding: 10px 40px; border-radius: 8px; border: 1.5px solid var(--dark-brown); transition: all 0.2s ease-in-out;}
+.prev-btn { background-color: transparent; color: var(--dark-brown); }
+.prev-btn:hover {
+  background-color: #EFE6D8; /* Light beige hover */
+  color: var(--dark-brown);
+}
+.next-btn { background-color: var(--dark-brown); color: var(--soft-cream-bg); }
+.next-btn:hover { background-color: var(--deep-teal-hover); border-color: var(--deep-teal-hover); color: var(--soft-cream-bg);}

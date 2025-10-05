@@ -1,0 +1,92 @@
+/* Survey Header */
+.survey-header {
+  background-color: var(--soft-cream-bg);
+  padding: 0.5rem 0;
+  margin-top: -10px;
+  height: 150px;
+}
+
+
+/* Main Page Layout */
+.survey-start-page {
+  background-color: var(--soft-cream-bg);
+  min-height: calc(100vh - 80px); /* Full height minus header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  margin-top: -80px; /* Adjust based on header height */
+}
+.survey-start-box {
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 20px;
+  padding: 4rem;
+  background-color: #F8F2E7; /* A slightly different beige for contrast */
+  margin-top: 10px; /* Adjust based on header height */
+}
+
+/* Left Column */
+.survey-title {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--dark-brown);
+}
+.survey-title span {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--muted-teal);
+  font-size: 5rem;
+  display: block;
+  line-height: 1.1;
+}
+.survey-intro-text p {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 450px;
+}
+
+/* Right Column: Form */
+.survey-form .form-label {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  display: block;
+  text-align: center;
+}
+.survey-form .form-control {
+  background-color: #F8F2E7;
+  border: 1.5px solid var(--golden-tan);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.survey-btn {
+  background-color: #443224;
+  color: var(--soft-cream-bg);
+  font-family: 'EB Garamond', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
+  width: 480px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+.survey-btn:hover {
+  background-color: var(--deep-teal-hover);
+  color: var(--soft-cream-bg);
+  border: 2px solid var(--golden-tan);
+}
+
+.unveil-btn {
+  width: 100%;
+  background-color: var(--dark-brown);
+  border: none;
+  border-radius: 10px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3rem;
+  padding: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+.unveil-btn:hover {
+  background-color: var(--deep-teal-hover);
+}

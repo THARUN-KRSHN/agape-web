@@ -3,11 +3,10 @@
 .contact-header { text-align: center; }
 .contact-header h3 { font-family: 'EB Garamond', serif; font-size: 3rem; }
 .contact-header p { max-width: 600px; margin: 1rem auto; }
-.social-icons img { width: 40px; margin: 0 10px; }
+.social-icons img { width: 60px; margin: 0 10px; }
 .form-label { font-family: 'EB Garamond', serif; }
 .form-control { border-color: var(--golden-tan); background-color: #fff; }
 .form-control:focus { box-shadow: 0 0 0 0.25rem rgba(186, 151, 95, 0.25); border-color: var(--golden-tan); }
-.submit-btn { width: 100%; padding: 12px; background-color: var(--dark-brown); border: none; font-family: 'EB Garamond', serif; font-size: 1.2rem; }
 .accordion-item, .accordion-button, .accordion-body { background-color: transparent !important; }
 .accordion-button { color: var(--dark-brown) !important; font-family: 'EB Garamond', serif; font-size: 1.2rem; background-color: #F8F2E7 !important; border-radius: 50px !important; margin-bottom: 10px; }
 .accordion-button:not(.collapsed) { box-shadow: none; }
@@ -16,3 +15,20 @@
 .accordion-button::before { content: '+'; font-size: 1.5rem; margin-right: 10px; }
 .accordion-button:not(.collapsed)::before { content: '−'; }
 .accordion-body { padding-left: 2.5rem; }
+.submit-btn {
+  background-color: #443224;
+  color: var(--soft-cream-bg);
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+  width: 705px;
+  height: 50px;
+}
+.submit-btn:hover {
+  background-color: var(--soft-cream-bg);
+  color: var(--muted-teal);
+  border: 2px solid var(--golden-tan);
+}

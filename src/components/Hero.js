@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import './Hero.css';
 
 const Hero = () => {
@@ -12,9 +12,9 @@ const Hero = () => {
           to realize their potential and build essential life skills for a brighter tomorrow.
           <strong> Sign in or sign up now to book your personalized training sessions and begin the journey of growth.</strong>
         </p>
-        <Button variant="dark" size="lg" className="hero-button">
+        <button variant="dark" size="lg" className="hero-btn">
           Sign In/Sign Up
-        </Button>
+        </button>
         <p className="hero-scroll-prompt">
           Scroll down to explore our personality development aids — from <strong>interactive surveys</strong> that help you discover your strengths and areas of growth, to <strong>inspiring stories</strong> that spark curiosity, resilience, and creativity. Dive into engaging resources designed to nurture confidence, empathy, leadership, and other essential life skills that prepare students for both academic success and real-world challenges.
         </p>

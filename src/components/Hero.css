@@ -8,6 +8,7 @@
   padding-right: 20px;
   padding-bottom: 40px;
   text-align: center;
+  margin-top: -50px; /* Adjust based on header height */
 }
 
 .hero-content {
@@ -33,23 +34,26 @@
   font-family: 'Libre Baskerville', serif;
   color: var(--muted-teal);
 }
-.hero-button {
-  background-color: var(--dark-brown);
+
+.hero-btn {
+  background-color: #443224;
   color: var(--soft-cream-bg);
-  font-family: 'EB Garamond', serif;
-  font-size: 1.2rem;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   margin-bottom: 3rem;
+  width: 200px;
+  height: 50px;
 }
-.hero-button:hover {
-  background-color: var(--deep-teal-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.hero-btn:hover {
+  background-color: var(--soft-cream-bg);
+  color: var(--muted-teal);
+  border: 2px solid var(--golden-tan);
 }
+
+
 .hero-scroll-prompt {
   font-size: 1rem;
   line-height: 1.7;

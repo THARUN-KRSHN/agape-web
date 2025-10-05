@@ -6,3 +6,33 @@
 .App {
   /* This is just a wrapper, most styles are in index.css or component CSS files. */
 }
+
+/* Container styling */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Remove Bootstrap blue & add your color */
+.survey-progress-bar .progress-bar {
+  background-color: #443224 !important;  /* Your custom color (purple example) */
+  transition: width 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+/* Progress bar background (empty part) */
+.survey-progress-bar.progress {
+  background-color: #EEE2CA ; /* light gray background */
+  border-radius: 8px;
+  border-color: #AD8E57 ;
+  height: 15px; /* make thinner if you want */
+}
+
+/* Text styling */
+.progress-percent, .progress-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}

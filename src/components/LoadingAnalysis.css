@@ -1,0 +1,60 @@
+/* src/components/LoadingAnalysis.css */
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--soft-cream-bg); /* Agape theme color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--dark-brown);
+  margin-top: 2rem;
+}
+
+.pulsating-dots {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--dark-brown); /* Agape theme color */
+  animation: pulse 1.4s infinite ease-in-out both;
+}
+
+/* Animation delay for each dot */
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+/* The @keyframes for the pulsating effect */
+@keyframes pulse {
+  0%, 80%, 100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}

@@ -36,15 +36,23 @@
   font-size: 1.1rem;
   line-height: 1.8;
 }
-.learn-more-btn {
-  background-color: var(--dark-brown);
-  border: none;
-  font-family: 'EB Garamond', serif;
-  padding: 10px 25px;
-  margin-top: 1rem;
+
+.learn-btn {
+  background-color: #443224;
+  color: var(--soft-cream-bg);
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+  width: 200px;
+  height: 50px;
 }
-.learn-more-btn:hover {
-  background-color: var(--deep-teal-hover);
+.learn-btn:hover {
+  background-color: var(--soft-cream-bg);
+  color: var(--muted-teal);
+  border: 2px solid var(--golden-tan);
 }
 
 /* --- Footer Info --- */

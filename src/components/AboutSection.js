@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import './AboutSection.css';
 import agapeLogoSmall from '../assets/agape-logo.png'; // Make sure you have this logo
 
@@ -41,7 +41,7 @@ const AboutSection = () => {
               with modern methods to shape confident, kind, and capable
               individuals ready for the world.
             </p>
-            <Button variant="dark" className="learn-more-btn">Learn More</Button>
+            <button variant="dark" className="learn-btn">Learn More</button>
           </Col>
         </Row>
 

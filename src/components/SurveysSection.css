@@ -41,6 +41,22 @@
   font-size: 5rem;
 }
 
+.custom-btn {
+  background-color: #443224;
+  color: var(--soft-cream-bg);
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
+  height: 50px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+.custom-btn:hover {
+  background-color: var(--deep-teal-hover);
+  color: var(--soft-cream-bg);
+  border: 2px solid var(--golden-tan);
+}
+
 .promo-btn {
   background-color: var(--dark-brown);
   border: none;

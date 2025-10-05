@@ -1,4 +1,4 @@
-.footer { padding: 3rem 0; background-color: var(--soft-cream-bg); border-top: 1.5px solid var(--golden-tan); }
+.footer { padding: 3rem 0; background-color: var(--soft-cream-bg); border-top: 1.5px solid var(--golden-tan); text-align: right;}
 .footer-logo { max-width: 150px; }
 .footer h4 { font-family: 'EB Garamond', serif; font-weight: 600; color: var(--dark-brown); }
 .footer ul { list-style-type: none; padding: 0; }
