@@ -29,7 +29,7 @@ const ContactSection = () => {
                 <Col md={6}><Form.Group className="mb-3"><Form.Label>Email</Form.Label><Form.Control type="email" placeholder="jane@fromer.com" /></Form.Group></Col>
               </Row>
               <Form.Group className="mb-3"><Form.Label>Message</Form.Label><Form.Control as="textarea" rows={4} placeholder="Your message..." /></Form.Group>
-              <button type="submit" className="submit-btn">Submit</button>
+              <button type="submit" className="submitc-btn">Submit</button>
             </Form>
           </Col>
           {/* Column 2: Accordion FAQ */}

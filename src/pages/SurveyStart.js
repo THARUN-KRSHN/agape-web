@@ -39,6 +39,7 @@ const SurveyStart = () => {
     // navigate('/survey/questions', { state: { name, age } });
   };
 
+
   return (
     <>
       {/* Simplified header for the survey pages */}
