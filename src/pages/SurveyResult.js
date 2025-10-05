@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Container, Navbar, ProgressBar } from 'react-bootstrap';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import './SurveyResult.css';
 import logo from '../assets/agape-logo.png';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import PDFReport from '../components/PDFReport';
 
 const SurveyResult = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const pdfRef = useRef();
 
   // Destructure all the data passed from the previous page
   const { result, name, age } = location.state || {};
@@ -20,35 +23,34 @@ const SurveyResult = () => {
   }, [result, name, age, navigate]);
 
   const handleRetakeTest = () => {
-    navigate('/survey');
+    navigate('/survey/start');
   };
 
-  const handleDownloadPDF = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(18);
-    doc.text(`Personality Report for ${name}`, 10, 20);
-    
-    doc.setFontSize(12);
-    doc.text(`Age: ${age}`, 10, 30);
-    doc.text(`Dominant Trait: ${result.dominantTrait.charAt(0).toUpperCase() + result.dominantTrait.slice(1)}`, 10, 40);
+  
 
-    doc.text("Trait Scores:", 10, 60);
-    let yPos = 70; // Starting Y position for the list of traits
-    Object.entries(result.traits).forEach(([trait, score]) => {
-      const traitText = `${trait.charAt(0).toUpperCase() + trait.slice(1)}: ${score}`;
-      doc.text(traitText, 15, yPos);
-      yPos += 10;
-    });
+  const handleDownloadPDF = async () => {
+    const input = pdfRef.current;
+    if(input) {
+      try {
+        const canvas = await html2canvas(input, { scale: 2 });
+        const imgData = canvas.toDataURL('image/png');
 
-    yPos += 10; // Add some space
-    doc.text("Suggestions:", 10, yPos);
-    yPos += 10;
-    const suggestionsText = doc.splitTextToSize(result.suggestions.join('\n- '), 180);
-    doc.text(`- ${suggestionsText}`, 15, yPos);
+        const pdf=new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4'
+        })
 
-    doc.save(`Agape_Personality_Report_${name}.pdf`);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save(`Agape_Personality_Report_${name}.pdf`);
+      } catch (error) {
+        console.error("Error generating PDF:", error);
+      }
+    }
   };
-
   // If data is not ready, the useEffect above will redirect. Return null to prevent errors.
   if (!result) {
     return null;
@@ -108,6 +110,9 @@ const SurveyResult = () => {
             </div>
           </div>
         </Container>
+      </div>
+      <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        {result&& <PDFReport ref={pdfRef} name={name} age={age} result={result} />}
       </div>
     </>
   );

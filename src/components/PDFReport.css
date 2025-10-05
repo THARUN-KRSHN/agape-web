@@ -1,0 +1,121 @@
+/* Defines the overall page layout and fonts for the PDF */
+.pdf-container {
+  width: 794px; /* A4 width */
+  padding: 35px;
+  background-color: #EEE2CA; /* Main beige background */
+  font-family: 'Roboto Slab', serif;
+  color: #443224; /* Dark brown text */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 1122px; /* A4 height */
+}
+
+/* Header section with logo and title */
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #BA975F; /* Muted gold border */
+}
+.pdf-logo {
+  width: 120px;
+}
+.pdf-main-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 32px;
+}
+.pdf-main-title span {
+  font-family: 'Libre Baskerville', serif;
+  color: #2E5352; /* Muted teal */
+  font-size: 48px;
+}
+
+/* Body of the report */
+.pdf-body {
+  padding: 20px 0;
+}
+
+/* User's info section */
+.pdf-user-info {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.pdf-user-info p {
+  margin: 0;
+}
+
+/* Box containing the trait analysis */
+.pdf-analysis-box {
+  background-color: #F8F2E7; /* Lighter cream for the box */
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+/* "Trait Analysis" and "Suggestions" titles */
+.pdf-section-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.pdf-traits-container {
+  font-size: 14px;
+}
+.pdf-trait-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+.pdf-trait-name {
+  width: 150px;
+  text-align: right;
+}
+.pdf-progress-track {
+  flex-grow: 1;
+  height: 12px;
+  background-color: #EFE6D8;
+  border-radius: 10px;
+}
+.pdf-progress-fill {
+  height: 100%;
+  background-color: #443224; /* Dark brown fill */
+  border-radius: 10px;
+}
+.pdf-trait-score {
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Box for suggestions */
+.pdf-suggestions-box {
+  background-color: #F8F2E7;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+/* Styling for the suggestions list */
+.pdf-suggestions-list {
+  font-size: 16px;
+  list-style-position: inside;
+  padding-left: 0;
+}
+.pdf-suggestions-list li {
+  margin-bottom: 10px;
+}
+
+/* Footer section */
+.pdf-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 3px solid #BA975F; /* Muted gold border */
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+}
