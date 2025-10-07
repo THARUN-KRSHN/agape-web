@@ -1,6 +1,9 @@
-.survey-header {
-    margin-top: -10px;
-    height: 150px;
+.surveyr-header {
+  background-color: var(--soft-cream-bg);
+  padding: 1rem 0; /* Control height with padding */
+  border-bottom: 1.5px solid var(--golden-tan);
+  height: 140px;
+  margin-bottom: 30px; /* Remove bottom margin */
 }
 .survey-result-page {
   background-color: var(--soft-cream-bg);
@@ -110,3 +113,48 @@
   color: var(--soft-cream-bg);
 }
 .download-btn:hover { background-color: var(--deep-teal-hover); border-color: var(--deep-teal-hover); color: var(--soft-cream-bg);}
+
+/* --- RESPONSIVE ADJUSTMENTS for Survey Result Page --- */
+
+@media (max-width: 767.98px) {
+
+  .survey-result-page {
+    padding: 2rem 1rem;
+  }
+
+  /* 1. Reduce padding on the main content box */
+  .result-box {
+    padding: 2rem 1.5rem;
+  }
+
+  /* 2. Scale down the title and other text */
+  .result-title {
+    font-size: 1.8rem;
+  }
+  .user-details, .insights-text {
+    font-size: 0.95rem;
+  }
+
+  /* 3. Adjust the trait analysis layout for narrow screens */
+  .trait-item {
+    gap: 0.75rem; /* Reduce space between items */
+  }
+  .trait-name {
+    width: 125px; /* Make the name column narrower */
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  .trait-score {
+    width: 30px;
+    font-size: 0.9rem;
+  }
+
+  /* 4. Stack the action buttons vertically */
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .action-btn {
+    width: 100%; /* Make buttons full-width for easy tapping */
+  }
+}

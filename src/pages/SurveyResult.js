@@ -61,7 +61,7 @@ const SurveyResult = () => {
 
   return (
     <>
-      <Navbar className="survey-header">
+      <Navbar className="surveyr-header">
         <Container>
           <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" /></Navbar.Brand>
           <Navbar.Text className="header-tagline d-none d-md-block">India's First Personality Development School</Navbar.Text>
