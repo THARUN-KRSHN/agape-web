@@ -4,3 +4,21 @@
 .footer ul { list-style-type: none; padding: 0; }
 .footer ul a { color: var(--dark-brown); text-decoration: none; transition: color 0.3s ease; }
 .footer ul a:hover { color: var(--muted-teal); }
+/* --- RESPONSIVE ADJUSTMENTS for Footer --- */
+
+@media (max-width: 767.98px) {
+  .footer {
+    /* Center-align all content on mobile */
+    text-align: center;
+  }
+
+  /* Add space below the logo when it stacks */
+  .footer-logo {
+    margin-bottom: 2rem;
+  }
+
+  /* Add space between the stacked link columns */
+  .footer .col-md-9 .row > * {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -46,7 +46,7 @@ const SurveyStart = () => {
       <Navbar className="survey-header">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img src={logo} width="120" alt="AGAPE Logo" />
+            <img src={logo} width="120" alt="AGAPE Logo" className='survey-logo'/>
           </Navbar.Brand>
           <Navbar.Text className="header-tagline">
             India's First Personality Development School

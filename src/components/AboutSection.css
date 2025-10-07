@@ -78,9 +78,43 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* --- RESPONSIVE ADJUSTMENTS for Mobile --- */
+
+/* This targets tablets and mobile phones */
+@media (max-width: 767.98px) {
+
+  /* 1. Reduce the large vertical padding on the whole section */
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-logo{
+    max-width: 300px; /* Slightly smaller logo on mobile */
+  }
+
+  /* 2. Remove borders and reset padding for the stacked columns */
   .logo-column, .description-column {
-    border: none; /* Remove borders on mobile */
+    border: none;
     padding: 1rem 0;
+  }
+
+  /* 3. Center-align the description text and button on mobile */
+  .description-column {
+    text-align: center;
+    padding-left: 0; /* Reset the desktop-specific padding */
+  }
+
+  /* 4. Center the footer text and stack the list items vertically */
+  .footer-info-row {
+    text-align: center; /* This will center the copyright paragraph */
+    margin-top: 2rem;
+  }
+
+  .footer-info-row ul {
+    flex-direction: column; /* Stack the list items */
+    align-items: center; /* Center them horizontally */
+    gap: 0.5rem; /* Adjust the vertical spacing */
+    margin-top: 1rem;
+    justify-content: center;
   }
 }

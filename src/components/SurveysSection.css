@@ -1,5 +1,6 @@
 /* You can name this StoriesSection.css, SurveysSection.css, or PromoSections.css */
 
+
 .promo-section-wrapper {
   padding: 4rem 0;
   background-color: var(--soft-cream-bg);
@@ -70,9 +71,37 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* --- RESPONSIVE ADJUSTMENTS for Stories/Surveys --- */
+
+@media (max-width: 767.98px) {
+  /* Reduce padding inside the main box */
+  .promo-section-wrapper{
+    padding: 1rem 1rem;
+  }
+  .promo-section {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Make the large headings smaller */
+  .promo-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .promo-heading span {
+    font-size: 3rem;
+  }
+
+  /* Center the content and add space above it when it stacks */
   .promo-content, .surveys-section .promo-content {
-    padding: 2rem 0 0 0 !important; /* Add padding top on mobile */
+    padding: 1rem 1rem 1rem 1rem !important;
     text-align: center;
+  }
+
+  /* Center the image when it stacks */
+  .promo-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 350px;
   }
 }

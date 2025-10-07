@@ -1,24 +1,23 @@
 .survey-page-title { font-family: 'EB Garamond', serif; font-size: 2rem; }
 .survey-page-title span { font-family: 'Libre Baskerville', serif; color: var(--muted-teal); }
-.survey-header {
-    margin-top: -10px;
-    height: 150px;
+.question-header {
+  background-color: var(--soft-cream-bg);
+  padding: 1rem 0; /* Control height with padding */
+  border-bottom: 1.5px solid var(--golden-tan);
 }
 .header-tagline {
   font-family: 'EB Garamond', serif;
   font-size: 1.2rem;
-  color: var(--deep-teal-hover) !important;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--dark-brown) !important;
 }
 
 .survey-questions-page {
   background-color: var(--soft-cream-bg);
-  min-height: calc(100vh - 80px);
+  flex-grow: 1; /* Makes the section fill available space */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 .survey-box {
   border: 1.5px solid var(--golden-tan);
@@ -26,11 +25,9 @@
   padding: 3rem 4rem;
   background-color: #F8F2E7;
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -40px; /* Adjust based on header height */
+  margin: 0 auto; /* Cleaner way to center */
 }
 
 /* Progress Bar */
@@ -102,3 +99,49 @@
 }
 .next-btn { background-color: var(--dark-brown); color: var(--soft-cream-bg); }
 .next-btn:hover { background-color: var(--deep-teal-hover); border-color: var(--deep-teal-hover); color: var(--soft-cream-bg);}
+
+/* --- RESPONSIVE ADJUSTMENTS for Survey Questions Page --- */
+
+@media (max-width: 767.98px) {
+
+  /* 1. Simplify the header for mobile */
+  .question-header .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+  .question-header .survey-logo {
+    display: none; /* Hide the logo to give space to the title */
+  }
+
+  /* 2. Reduce padding on the main content box */
+  .survey-box {
+    padding: 2rem 1.5rem;
+  }
+
+  /* 3. Scale down the question text */
+  .question-text {
+    font-size: 1.8rem;
+    min-height: 100px; /* Reduce min-height */
+  }
+
+  /* 4. Adjust the custom slider and its labels */
+  .slider-container {
+    margin: 2rem 0;
+    padding: 0;
+  }
+  .slider-label {
+    font-size: 0.75rem; /* Make label text smaller */
+    width: 70px; /* Allow labels to be narrower */
+  }
+
+  /* 5. Adjust navigation buttons */
+  .navigation-buttons {
+    flex-direction: column-reverse; /* Stack buttons vertically */
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-btn {
+    width: 100%; /* Make buttons full-width for easy tapping */
+  }
+}

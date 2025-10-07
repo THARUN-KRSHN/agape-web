@@ -32,3 +32,30 @@
   color: var(--muted-teal);
   border: 2px solid var(--golden-tan);
 }
+/* --- RESPONSIVE ADJUSTMENTS for Contact Section --- */
+
+@media (max-width: 767.98px) {
+  .contact-section-wrapper {
+    padding: 1rem 1rem;
+  }
+  .contact-section {
+    padding: 2rem 1.5rem;
+  }
+  .contact-header h3 {
+    font-size: 2.2rem; /* Reduce heading size */
+  }
+  .social-icons img {
+    width: 50px; /* Reduce icon size */
+  }
+
+  /* Add space between the stacked form and accordion */
+  .contact-section .row > [class*="col-"]:first-child {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Make the submit button full-width */
+  .submitc-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

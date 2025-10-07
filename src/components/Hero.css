@@ -1,14 +1,14 @@
 .hero-section {
-  min-height: 100vh !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding-top: 100px !important; /* Added !important as a test */
+  min-height: 100vh ;
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  padding-top: 100px ;/* Added !important as a test */
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 40px;
   text-align: center;
-  margin-top: -50px; /* Adjust based on header height */
+  margin-top: -80px; /* Adjust based on header height */
 }
 
 .hero-content {
@@ -60,8 +60,35 @@
   max-width: 700px;
   margin: 0 auto;
 }
-@media (max-width: 768px) {
-  .hero-headline { font-size: 4rem; }
-  .hero-content { padding: 2rem 1rem; }
-  .hero-description, .hero-scroll-prompt { font-size: 1rem; }
+/* --- RESPONSIVE ADJUSTMENTS for Mobile --- */
+
+/* This targets tablets and mobile phones */
+@media (max-width: 767.98px) {
+
+  /* 1. Make the main content box padding smaller */
+  .hero-content {
+    padding: 2rem 1.5rem;
+    border-width: 1px; /* Optional: make border thinner on mobile */
+  }
+
+  /* 2. Most Important: Reduce the headline size to prevent overflow */
+  .hero-headline {
+    font-size: 3.2rem; /* Significantly smaller than the desktop size */
+    margin-bottom: 1.5rem;
+  }
+
+  /* 3. Slightly reduce paragraph font sizes for a better fit */
+  .hero-description, .hero-scroll-prompt {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .hero-description {
+      margin-bottom: 2rem;
+  }
+
+  /* 4. Make the button size flexible instead of fixed */
+  .hero-btn {
+    width: auto; /* Let the button size itself based on content */
+    padding: 12px 40px; /* Control its size with padding instead */
+  }
 }

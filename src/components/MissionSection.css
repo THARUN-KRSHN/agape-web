@@ -23,3 +23,27 @@
   font-size: 1.1rem;
   line-height: 1.8;
 }
+/* --- RESPONSIVE ADJUSTMENTS for Mission Section --- */
+
+@media (max-width: 767.98px) {
+
+  /* 1. Reduce the large vertical padding on the whole section */
+  .mission-section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* 2. Make the content box padding smaller on mobile */
+  .mission-box {
+    padding: 1.5rem;
+  }
+
+  /* 3. Reduce the heading size to fit smaller screens */
+  .mission-box h3 {
+    font-size: 1.8rem;
+  }
+
+  /* 4. Slightly reduce the paragraph font size for balance */
+  .mission-box p {
+    font-size: 1rem;
+  }
+}

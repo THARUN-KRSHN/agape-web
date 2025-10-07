@@ -31,8 +31,23 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* --- RESPONSIVE ADJUSTMENTS for Tagline Section --- */
+
+@media (max-width: 767.98px) {
+  /* 1. Disable the tall container and sticky effect on mobile */
+  .tagline-section-sticky-wrapper {
+    height: auto; /* Revert to normal height */
+    padding: 4rem 1.5rem; /* Add standard padding */
+  }
+
+  .sticky-container {
+    position: static; /* Disable the 'sticky' behavior */
+    height: auto;
+  }
+
+  /* 2. Drastically reduce the font size to fit mobile screens */
   .tagline-heading {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Reduce from 10rem */
+    text-align: center; /* Center the text on mobile */
   }
 }

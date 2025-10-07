@@ -1,4 +1,21 @@
 /* src/components/Header.css */
+@media (max-width: 991.98px) {
+  .agape-nav .navbar-collapse {
+    margin-top: 1rem; /* Adds space between the logo/brand and the dropdown links */
+    border-top: 1.5px solid var(--golden-tan); /* Adds a separator line */
+    padding-top: 0.5rem;
+  }
+  .agape-nav .nav-link {
+    text-align: center; /* Center-align the text for a cleaner look */
+    padding: 0.8rem 0; /* Add more vertical space for easier tapping */
+    margin-left: 0; /* Remove the horizontal margin used on desktop */
+  }
+  .agape-nav .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 
 /* Style the main navbar container */
 .agape-nav {
@@ -9,8 +26,7 @@
   /* Add padding for spacing */
   padding: 0.2rem 0;
   top: 0 !important;
-  margin-top: -10px;
-  height: 150px;
+  margin-top: -50px;
 }
 
 /* Style the individual navigation links */

@@ -98,9 +98,9 @@ const handleResponseChange = (e) => {
 
   return (
     <>
-      <Navbar className="survey-header">
+      <Navbar className="question-header">
         <Container>
-          <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" /></Navbar.Brand>
+          <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" className='survey-logo'/></Navbar.Brand>
           <Navbar.Text className="header-tagline">
                       India's First Personality Development School
                     </Navbar.Text>
