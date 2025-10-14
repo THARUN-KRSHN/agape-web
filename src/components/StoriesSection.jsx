@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 import './StoriesSection.css';
 // 1. Create src/assets/images folder and add your story image there
 import storyImage from '../assets/images/story-image.png'; 
+import { Link } from 'react-router-dom';
 
 const StoriesSection = () => {
   return (
@@ -19,7 +20,9 @@ const StoriesSection = () => {
             <p>
               At AGAPE, we believe stories are more than just words—they are mirrors, mentors, and milestones in life’s journey. With 100+ handpicked stories and immersive audiobooks, we bring tales that spark imagination, nurture values, and guide personality development in subtle yet powerful ways. Each story inspires reflection, builds resilience, and helps you grow into the best version of yourself—making learning not just meaningful, but deeply personal.
             </p>
+            <Link to="/stories">
             <button className="custom-btn">Explore Stories</button>
+            </Link>
           </Col>
         </Row>
       </Container>

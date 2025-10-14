@@ -1,0 +1,11 @@
+/* StoryHero.css */
+.story-hero-container { border: 1.5px solid var(--golden-tan); border-radius: 20px; text-align: center; padding: 3rem 2rem; margin: 2rem; }
+.story-hero-title { font-family: 'EB Garamond', serif; font-size: 3rem; color: var(--dark-brown); }
+.story-hero-title span { font-family: 'Libre Baskerville', serif; color: var(--muted-teal); font-size: 5rem; display: block; line-height: 1.1; }
+.story-hero-subtitle { max-width: 700px; margin: 1.5rem auto 0 auto; line-height: 1.8; font-size: 1.1rem; }
+@media (max-width: 767.98px) {
+    .story-hero-container { padding: 2rem 1.5rem; margin: 1rem; }
+    .story-hero-title { font-size: 2.2rem; }
+    .story-hero-title span { font-size: 3.5rem; }
+    .story-hero-subtitle { font-size: 1rem; }
+}

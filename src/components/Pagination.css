@@ -1,0 +1,5 @@
+/* Pagination.css */
+.pagination { display: flex; justify-content: center; list-style: none; padding: 0; margin-top: 3rem; }
+.page-item { margin: 0 5px; }
+.page-link { display: block; width: 40px; height: 40px; line-height: 40px; text-align: center; text-decoration: none; background-color: #F8F2E7; color: var(--dark-brown); border-radius: 50%; border: 1.5px solid var(--golden-tan); transition: all 0.3s ease; }
+.page-item.active .page-link, .page-link:hover { background-color: var(--dark-brown); color: #fff; border-color: var(--dark-brown); }

@@ -1,0 +1,88 @@
+.story-reader-page {
+  padding: 3rem 1rem;
+  background-color: var(--soft-cream-bg);
+}
+
+/* Story Info Header */
+.story-info-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1.5px solid var(--golden-tan);
+}
+.story-info-thumb {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.story-info-text h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--dark-brown);
+}
+.story-info-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* Control Buttons */
+.story-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.control-btn {
+  font-family: 'EB Garamond', serif;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+/* PDF Viewer Container */
+.pdf-viewer-container {
+  display: flex;
+  justify-content: center;
+  background-color: #F8F2E7;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--golden-tan);
+}
+/* Style for the Turn.js canvas */
+/* Style for the Flipbook container */
+/* Style for the PDF Viewer container */
+.pdf-viewer-container {
+  background-color: #F8F2E7;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--golden-tan);
+  display: flex;
+  justify-content: center;
+}
+
+/* Style for the main Document component */
+/* Style for the PDF Viewer container */
+.pdf-viewer-container {
+  background-color: #F8F2E7;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--golden-tan);
+  height: 800px; /* Give the container a fixed height */
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+  .story-reader-page {
+    padding: 2rem 1rem;
+  }
+  .story-info-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .story-info-text h1 {
+    font-size: 2rem;
+  }
+}

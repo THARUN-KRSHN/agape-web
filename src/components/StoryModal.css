@@ -1,0 +1,134 @@
+/* --- Main Modal Structure --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* Darker overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  background: #443224; /* Dark brown from your theme */
+  color: #EEE2CA; /* Light cream text */
+  border-radius: 8px;
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* --- Thumbnail and Actions --- */
+.modal-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #333;
+}
+.modal-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  border-radius: 8px 8px 0 0;
+}
+/* Gradient overlay to make text/buttons readable */
+.modal-thumbnail::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, #443224, transparent);
+}
+
+.primary-actions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.read-btn {
+  background-color: var(--soft-cream-bg);
+  color: var(--dark-brown);
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+.read-btn:hover {
+  background-color: rgb(42, 79, 83); /* Deep teal hover */
+  color:var(--soft-cream-bg);
+}
+
+
+/* --- Text Content --- */
+.modal-details {
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+.modal-details h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--soft-cream-bg);
+}
+.modal-details p {
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: var(--soft-cream-bg);
+}
+
+.info-section {
+  border-top: 1px solid rgba(238, 226, 202, 0.2);
+  padding-top: 1.5rem;
+}
+.info-section h4 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--soft-cream-bg);
+}
+.info-section p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--soft-cream-bg);
+}
+.info-section p span {
+  font-weight: bold;
+  color: #EEE2CA;
+}
+
+/* --- Close Button --- */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #181818;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 3;
+}

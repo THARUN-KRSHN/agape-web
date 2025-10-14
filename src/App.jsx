@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage';
 import SurveyStart from './pages/SurveyStart';
 import SurveyQuestions from './pages/SurveyQuestions';
 import SurveyResult from './pages/SurveyResult';
+import StoriesPage from './pages/StoriesPage';
+import StoryReaderPage from './pages/StoryReaderPage';
 // Import the main CSS file for the App component
 import './App.css';
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/survey/start" element={<SurveyStart />} />
           <Route path="/survey/questions" element={<SurveyQuestions />} />
           <Route path="/survey/result" element={<SurveyResult />} />
+          <Route path="/stories" element={<StoriesPage />} />
+          <Route path="/stories/:slug" element={<StoryReaderPage />} />
           {/* Future routes can be added here */}
         </Routes>
         </div>
