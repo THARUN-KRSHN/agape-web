@@ -66,11 +66,31 @@
 /* Style for the main Document component */
 /* Style for the PDF Viewer container */
 .pdf-viewer-container {
-  background-color: #F8F2E7;
-  padding: 1rem;
-  border-radius: 15px;
-  border: 1.5px solid var(--golden-tan);
-  height: 800px; /* Give the container a fixed height */
+  background-color: transparent; /* Can remove background if desired */
+  padding: 2rem 0; /* Adjust padding as needed */
+  border: none; /* Remove border if desired */
+  display: flex;
+  justify-content: center; /* Center the flipbook horizontally */
+  align-items: center; /* Center vertically if needed */
+  min-height: 650px; /* Ensure enough height for the book */
+}
+
+.flipbook-container {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  background-color: white; /* Give it a book background */
+}
+
+/* Style for each page within the flipbook */
+.flipbook-page {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align PDF page to top */
+  overflow: hidden; /* Prevent content spilling */
+}
+
+.pdf-document-hidden > div {
+   display: none; 
 }
 
 /* Responsive Styles */
@@ -84,5 +104,9 @@
   }
   .story-info-text h1 {
     font-size: 2rem;
+  }
+  .pdf-viewer-container{
+    padding: 1rem;
+    height: auto;
   }
 }

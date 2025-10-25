@@ -9,19 +9,42 @@
   padding: 2.5rem;
   max-width: 800px; /* Constrain width for readability */
   margin: 0 auto 2rem auto; /* Center the box and add space below */
+  --background: linear-gradient(to left, #2E5352 0%, #2E5352 100%);
+  overflow: visible;
+  background: #2E5352;
+  position: relative;
+  z-index: 1;
+}
+.mission-box::after{
+  position: absolute;
+ content: "";
+ top: 30px;
+ left: 0;
+ right: 0;
+ z-index: -1;
+ height: 100%;
+ width: 100%;
+ transform: scale(0.8);
+ filter: blur(25px);
+ background: var(--background);
+ transition: opacity .5s;
+}
+.mission-box:hover::after {
+ opacity: 0;
 }
 
 .mission-box h3 {
   font-family: 'EB Garamond', serif;
   font-weight: 600;
   font-size: 2.5rem;
-  color: var(--dark-brown);
+  color: #EEE2CA;
   margin-bottom: 1.5rem;
 }
 
 .mission-box p {
   font-size: 1.1rem;
   line-height: 1.8;
+  color: #EEE2CA;
 }
 /* --- RESPONSIVE ADJUSTMENTS for Mission Section --- */
 

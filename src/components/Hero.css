@@ -16,7 +16,9 @@
   border: 1.5px solid var(--golden-tan);
   padding: 3rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  will-change: box-shadow;
 }
 
 /* All other styles are the same */

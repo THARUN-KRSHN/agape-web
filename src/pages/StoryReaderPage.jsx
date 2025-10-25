@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Spinner, Button, Navbar } from 'react-bootstrap';
 
-// Imports for the PDF viewer
-import { Viewer, Worker } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import * as pdfjs from 'pdfjs-dist';
+// ✅ 1. Imports for react-pdf and react-pageflip ONLY
+import HTMLFlipBook from 'react-pageflip';
+import { Document, Page } from 'react-pdf';
+// We assume pdfjs worker is configured globally in index.js
 
 import './StoryReaderPage.css';
 import logo from '../assets/agape-logo.png';
@@ -17,12 +17,10 @@ const StoryReaderPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const audioRef = useRef(null);
-
-    // ✅ 1. Add state to track if the audio is playing
     const [isPlaying, setIsPlaying] = useState(false);
+    const [numPages, setNumPages] = useState(null);
 
-    // Create the dynamic worker URL for the PDF viewer
-    const workerUrl = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+    // No need for isMobileView state if flipbook is used for all sizes (adjust CSS later if needed)
 
     useEffect(() => {
         const fetchStoryDetails = async () => {
@@ -41,20 +39,26 @@ const StoryReaderPage = () => {
         fetchStoryDetails();
     }, [slug]);
 
-    // ✅ 2. Update the toggleAudio function to manage state
-    const toggleAudio = () => {
-        if (audioRef.current) {
-            if (audioRef.current.paused) {
-                audioRef.current.play();
+    function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+        setNumPages(nextNumPages);
+    }
+
+    const toggleAudio = async () => {
+        if (!audioRef.current) return;
+        if (audioRef.current.paused) {
+            try {
+                await audioRef.current.play();
                 setIsPlaying(true);
-            } else {
-                audioRef.current.pause();
+            } catch (error) {
+                console.error("Audio play failed:", error);
                 setIsPlaying(false);
             }
+        } else {
+            audioRef.current.pause();
+            setIsPlaying(false);
         }
     };
-    
-    // Effect to reset play state if audio finishes on its own
+
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio) return;
@@ -65,17 +69,16 @@ const StoryReaderPage = () => {
         };
     }, [story]);
 
+    if (isLoading) return <div className="loading-container"><Spinner animation="border" /></div>;
+    if (error) return <div className="error-container">{error}</div>;
 
-    if (isLoading) {
-        return <div className="loading-container"><Spinner animation="border" /></div>;
-    }
-    if (error) {
-        return <div className="error-container">{error}</div>;
-    }
+    // Define dimensions for the flipbook (adjust as needed)
+    const flipbookWidth = 450;
+    const flipbookHeight = 600;
 
     return (
         <>
-            <Navbar className="survey-header">
+            <Navbar className="survey-header"> {/* Ensure class name is correct */}
                 <Container>
                     <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" /></Navbar.Brand>
                     <Navbar.Text className="header-tagline d-none d-md-block">India's First Personality Development School</Navbar.Text>
@@ -95,20 +98,43 @@ const StoryReaderPage = () => {
                                 </div>
                             </div>
                             <div className="story-controls">
-                                {/* ✅ 3. Corrected this to be a React Bootstrap Button for routing */}
                                 <Button as={Link} to="/stories" variant="light" className="control-btn">Back to Stories</Button>
                                 {story.audiofile && (
-                                    // ✅ 4. Update the button to show dynamic text
                                     <Button onClick={toggleAudio} variant="dark" className="control-btn">
                                         {isPlaying ? 'Pause Audio' : 'Play Audio'}
                                     </Button>
                                 )}
                             </div>
+
+                            {/* --- Use react-pdf + react-pageflip --- */}
                             <div className="pdf-viewer-container">
                                 {story.file ? (
-                                    <Worker workerUrl={workerUrl}>
-                                        <Viewer fileUrl={story.file} />
-                                    </Worker>
+                                    <Document
+                                        file={story.file}
+                                        onLoadSuccess={onDocumentLoadSuccess}
+                                        loading={<Spinner animation="border" />}
+                                        className="pdf-document-hidden" // Keep this hidden
+                                    >
+                                        {numPages && (
+                                            <HTMLFlipBook
+                                                width={flipbookWidth}
+                                                height={flipbookHeight}
+                                                showCover={true}
+                                                className="flipbook-container"
+                                            >
+                                                {Array.from(new Array(numPages), (el, index) => (
+                                                    <div className="flipbook-page" key={`page_${index + 1}`}>
+                                                        <Page
+                                                            pageNumber={index + 1}
+                                                            width={flipbookWidth}
+                                                            renderTextLayer={false}
+                                                            renderAnnotationLayer={false}
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </HTMLFlipBook>
+                                        )}
+                                    </Document>
                                 ) : (
                                     <div className="no-content-message"><p>Story content not available.</p></div>
                                 )}
@@ -117,7 +143,7 @@ const StoryReaderPage = () => {
                     )}
                 </Container>
             </main>
-            
+
             {story && story.audiofile && <audio ref={audioRef} src={story.audiofile} />}
             <Footer />
         </>

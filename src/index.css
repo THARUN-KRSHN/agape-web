@@ -15,7 +15,7 @@ font-family: 'Roboto Slab', serif;       (For body text/paragraphs)
   --muted-gold: #BA975F;
   --golden-tan: #AD8E57;
   --soft-cream-bg: #EEE2CA; /* Main Background */
-  --muted-teal: #2E5352;
+  --muted-teal: 2E5352#;
   --deep-teal-hover: rgb(42, 79, 83);
   --very-dark-brown-border: rgb(62, 39, 35);
 }

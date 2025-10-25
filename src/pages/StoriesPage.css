@@ -5,6 +5,12 @@
   padding: 3rem 2rem;
 }
 
+.story-marquee {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+}
+
+
 /* --- Search Bar --- */
 .search-bar {
   display: flex;
