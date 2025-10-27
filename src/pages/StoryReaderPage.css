@@ -76,6 +76,24 @@
   overflow: hidden; /* Prevent potential overflow issues */
 }
 
+.control-btn {
+  background-color: #443224;
+  color: var(--soft-cream-bg);
+  font-family: 'Libre Baskerville', serif;
+  border-radius: 20px;
+  border: 2px solid var(--golden-tan);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+  width: 200px;
+  height: 50px;
+}
+.control-btn:hover {
+  background-color: var(--soft-cream-bg);
+  color: var(--muted-teal);
+  border: 2px solid var(--golden-tan);
+}
+
 
 
 /* Style for each page within the flipbook */
@@ -117,8 +135,15 @@
     font-size: 2rem;
   }
   .pdf-viewer-container{
-      height: 70vh; /* Adjust mobile scroll view height */
+      height: 100vh; /* Adjust mobile scroll view height */
       padding: 0.5rem;
+      zoom: 1.8;
+  }
+  .control-btn {
+      width: 150px;
+      height: 40px;
+      font-size: 0.8rem;
+      margin-bottom: 0px;
   }
 
 }

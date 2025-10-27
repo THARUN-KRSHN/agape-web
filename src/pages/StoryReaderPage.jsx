@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Container, Spinner, Button, Navbar } from 'react-bootstrap';
+import { Container, Spinner,Navbar } from 'react-bootstrap';
 import { zoomPlugin } from '@react-pdf-viewer/zoom';
 // ✅ 1. Import ONLY @react-pdf-viewer/core and pdfjs-dist
 import { Viewer, Worker } from '@react-pdf-viewer/core';
@@ -138,11 +138,11 @@ const StoryReaderPage = () => {
                                 </div>
                             </div>
                             <div className="story-controls">
-                                <Button as={Link} to="/stories" variant="light" className="control-btn">Back to Stories</Button>
+                                <button as={Link} to="/stories" variant="light" className="control-btn">Back to Stories</button>
                                 {story.audiofile && (
-                                    <Button onClick={toggleAudio} variant="dark" className="control-btn">
+                                    <button onClick={toggleAudio} variant="dark" className="control-btn">
                                         {isPlaying ? 'Pause Audio' : 'Play Audio'}
-                                    </Button>
+                                    </button>
                                 )}
                             </div>
 
