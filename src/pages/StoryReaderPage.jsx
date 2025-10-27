@@ -122,7 +122,8 @@ const StoryReaderPage = () => {
                 <Container>
                     <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" /></Navbar.Brand>
                     <Navbar.Text className="header-tagline d-none d-md-block">India's First Personality Development School</Navbar.Text>
-                    <h2 className="survey-page-title">Agape <span>Stories</span></h2>
+                    <Navbar.Text  as={Link} to="/" style={{ textDecoration: 'none' }}
+                    ><h2 className="survey-page-title" >Agape <span>Stories</span></h2></Navbar.Text>
                 </Container>
             </Navbar>
 
@@ -138,7 +139,8 @@ const StoryReaderPage = () => {
                                 </div>
                             </div>
                             <div className="story-controls">
-                                <button as={Link} to="/stories" variant="light" className="control-btn">Back to Stories</button>
+                                <Link to="/stories">
+                                <button className="control-btn">Back to Stories</button></Link>
                                 {story.audiofile && (
                                     <button onClick={toggleAudio} variant="dark" className="control-btn">
                                         {isPlaying ? 'Pause Audio' : 'Play Audio'}

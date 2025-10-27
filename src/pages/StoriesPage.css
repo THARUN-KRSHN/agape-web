@@ -1,6 +1,10 @@
 /* src/pages/StoriesPage.css */
 
 /* This is the main container for the search bar and story grid */
+.header-tagline{
+  text-decoration: none;
+}
+
 .stories-content-area {
   padding: 3rem 2rem;
 }

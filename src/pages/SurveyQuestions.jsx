@@ -101,7 +101,7 @@ const handleResponseChange = (e) => {
       <Navbar className="question-header">
         <Container>
           <Navbar.Brand as={Link} to="/"><img src={logo} width="120" alt="AGAPE Logo" className='survey-logo'/></Navbar.Brand>
-          <Navbar.Text className="header-tagline">
+          <Navbar.Text className="header-tagline" as={Link} to="/">
                       India's First Personality Development School
                     </Navbar.Text>
           <h2 className="survey-page-title">Agape <span>Surveys</span></h2>

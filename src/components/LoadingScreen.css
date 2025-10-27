@@ -1,0 +1,61 @@
+/* src/components/LoadingScreen.css */
+
+.loading-container {
+  position: fixed; /* Cover the whole screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #EEE2CA; /* Your beige background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's on top */
+}
+
+.loading-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* SemiBold */
+  font-size: 3rem; /* Adjust size as needed */
+  overflow: hidden; /* Hide text until animation reveals it */
+  white-space: nowrap; /* Keep text on one line */
+  border-right: .10em solid var(--dark-brown); /* The typing cursor */
+  width: 0; /* Start with no width */
+  animation:
+    typing 2s steps(13, end) forwards, /* Typing animation (11 characters) */
+    blink-caret .75s step-end infinite;
+}
+
+.loading-text .text-part1 {
+  color: #443224; /* Dark Brown */
+}
+
+.loading-text .text-part2 {
+  color: #2E5352; /* Muted Teal */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 13ch } /* Width of 11 characters */
+}
+
+/* Typewriter cursor blinking */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--dark-brown); }
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+  .loading-text {
+    font-size: 2rem;
+     animation:
+      typing 2s steps(13, end) forwards,
+      blink-caret .75s step-end infinite;
+  }
+   @keyframes typing {
+    from { width: 0 }
+    to { width: 13ch } /* Adjust width if needed for smaller font */
+  }
+}
