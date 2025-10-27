@@ -44,12 +44,14 @@
 
 /* PDF Viewer Container */
 .pdf-viewer-container {
-  display: flex;
-  justify-content: center;
   background-color: #F8F2E7;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 15px;
   border: 1.5px solid var(--golden-tan);
+  min-height: 70vh; /* Ensure it has some height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center loading spinner */
 }
 /* Style for the Turn.js canvas */
 /* Style for the Flipbook container */
@@ -66,32 +68,41 @@
 /* Style for the main Document component */
 /* Style for the PDF Viewer container */
 .pdf-viewer-container {
-  background-color: transparent; /* Can remove background if desired */
-  padding: 2rem 0; /* Adjust padding as needed */
-  border: none; /* Remove border if desired */
-  display: flex;
-  justify-content: center; /* Center the flipbook horizontally */
-  align-items: center; /* Center vertically if needed */
-  min-height: 650px; /* Ensure enough height for the book */
+  background-color: #F8F2E7;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--golden-tan);
+  height: 80vh; /* Adjust height as needed */
+  overflow: hidden; /* Prevent potential overflow issues */
 }
 
-.flipbook-container {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  background-color: white; /* Give it a book background */
-}
+
 
 /* Style for each page within the flipbook */
-.flipbook-page {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align PDF page to top */
-  overflow: hidden; /* Prevent content spilling */
+
+
+
+
+.rpv-core__viewer {
+    width: 100%;
+    height: 100%;
 }
 
-.pdf-document-hidden > div {
-   display: none; 
+.zoom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem; /* Add some space between buttons */
 }
+/* Target the specific button classes from the plugin if needed */
+.rpv-zoom__button {
+   background-color: rgba(0, 0, 0, 0.1) !important; /* Example override */
+   border: 1px solid var(--golden-tan) !important;
+}
+
+/* --- Style for View Switching Loader --- */
+
 
 /* Responsive Styles */
 @media (max-width: 767.98px) {
@@ -106,7 +117,8 @@
     font-size: 2rem;
   }
   .pdf-viewer-container{
-    padding: 1rem;
-    height: auto;
+      height: 70vh; /* Adjust mobile scroll view height */
+      padding: 0.5rem;
   }
+
 }

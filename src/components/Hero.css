@@ -1,3 +1,89 @@
+/* Clickable Bars */
+.side-click-bar {
+  position: absolute;
+  top: 250px;
+  bottom: 0;
+  width: 50px; /* Adjust width */
+  background-color: var(--dark-brown);
+  cursor: pointer;
+  z-index: 3; /* Above hero content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px; /* Optional rounding */
+  transition: 0.5s ease;
+  height: 300px;
+  color: var(--soft-cream-bg);
+  letter-spacing: 10px;
+  line-height: 40px;
+  font-size: 35px;
+}
+
+.side-click-bar.left { left: 0; border-radius: 0 15px 15px 0; }
+.side-click-bar.right { right: 0; border-radius: 15px 0 0 15px; }
+
+
+
+.side-click-bar span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--soft-cream-bg);
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 2px; /* Add spacing if needed */
+}
+
+/* Animated Side Panels */
+.animated-side-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 100%;
+  width: 320px; /* Width of the panel */
+  background-color: rgba(173, 142, 87, 0.6); /* Panel background */
+  z-index: 10; /* Above overlay */
+  overflow-y: auto; /* Allow scrolling if content is tall */
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+.animated-side-panel.left { left: 0;}
+.animated-side-panel.right { right: 0; }
+
+/* Content inside panels (reuse previous styles if applicable) */
+.panel-content {
+  padding: 3rem 2rem;
+  color: var(--soft-cream-bg);
+  position: relative; /* For close button positioning */
+}
+.panel-heading-small { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 2rem; margin-top: 100px;}
+.panel-heading-large { font-family: 'EB Garamond', serif; font-size: 2.5rem; color: var(--dark-brown); margin-bottom: 1rem; }
+.panel-heading-large span { font-family: 'Libre Baskerville', serif; color: var(--dark-brown); font-size: 3.5rem; display: block; line-height: 1.1; }
+.panel-btn { background-color: var(--soft-cream-bg); color: var(--dark-brown); border: 1px solid var(--golden-tan); font-family: 'EB Garamond', serif; font-weight: 600; padding: 10px 25px; border-radius: 8px; margin-top: 2rem; transition: background-color 0.3s ease, color 0.3s ease; }
+.panel-btn:hover { background-color: var(--dark-brown); color: var(--soft-cream-bg); }
+
+/* Close Button for Panels */
+.panel-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--soft-cream-bg);
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Overlay Style (reuse if already present) */
+.hero-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 5; /* Below panels, above content */
+  opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+.hero-overlay.active { opacity: 1; pointer-events: auto; }
+
+
 .hero-section {
   min-height: 100vh ;
   display: flex ;
@@ -12,13 +98,16 @@
 }
 
 .hero-content {
-  max-width: 900px;
+  position: relative; /* Needed for reliable stacking */
+  z-index: 2; /* Below side bars but above background */
+  /* Ensure it has a background color */
+  background-color: var(--soft-cream-bg);
+  /* Keep existing border, padding, max-width etc. */
+  max-width: 800px;
   border: 1.5px solid var(--golden-tan);
   padding: 3rem 2rem;
   border-radius: 20px;
-  transition: box-shadow 0.3s ease;
-  position: relative;
-  will-change: box-shadow;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* All other styles are the same */
@@ -67,10 +156,16 @@
 /* This targets tablets and mobile phones */
 @media (max-width: 767.98px) {
 
+  /* Hide side interactions on mobile */
+  .side-click-bar, .animated-side-panel, .hero-overlay {
+    display: none;
+  }
+
   /* 1. Make the main content box padding smaller */
   .hero-content {
     padding: 2rem 1.5rem;
     border-width: 1px; /* Optional: make border thinner on mobile */
+    max-width: 95%;
   }
 
   /* 2. Most Important: Reduce the headline size to prevent overflow */
@@ -93,4 +188,10 @@
     width: auto; /* Let the button size itself based on content */
     padding: 12px 40px; /* Control its size with padding instead */
   }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+  .side-click-bar { width: 40px; } /* Make bars narrower */
+  .animated-side-panel { width: 280px; } /* Make panels narrower */
 }
