@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 import './AboutSection.css';
 import agapeLogoSmall from '../assets/agape-logo.png'; // Make sure you have this logo
 
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -41,7 +41,12 @@
   bottom: 0;
   opacity: 100%;
   width: 320px; /* Width of the panel */
-  background-color: rgba(173, 142, 87, 0.6); /* Panel background */
+  background-image: radial-gradient(
+  ellipse at center,
+  #f7f3e8 0%,    /* Light center */
+  #d2b48c 70%,  /* Mid-tone tan */
+  #7a6034 100% /* Dark brown edge */
+); /* Panel background */
   z-index: 10; /* Above overlay */
   overflow-y: auto; /* Allow scrolling if content is tall */
   box-shadow: 0 0 30px rgb(0, 0, 0);
@@ -55,7 +60,7 @@
   color: var(--soft-cream-bg);
   position: relative; /* For close button positioning */
 }
-.panel-heading-small { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 2rem; margin-top: 100px;}
+.panel-heading-small { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 600;color: var(--dark-brown); margin-bottom: 2rem; margin-top: 100px;}
 .panel-heading-large { font-family: 'EB Garamond', serif; font-size: 2.5rem; color: var(--dark-brown); margin-bottom: 1rem; }
 .panel-heading-large span { font-family: 'Libre Baskerville', serif; color: var(--dark-brown); font-size: 3.5rem; display: block; line-height: 1.1; }
 .panel-btn { background-color: var(--soft-cream-bg); color: var(--dark-brown); border: 1px solid var(--golden-tan); font-family: 'EB Garamond', serif; font-weight: 600; padding: 10px 25px; border-radius: 8px; margin-top: 2rem; transition: background-color 0.3s ease, color 0.3s ease; }
@@ -143,6 +148,8 @@
   color: var(--muted-teal);
   border: 2px solid var(--golden-tan);
 }
+
+
 
 
 .hero-scroll-prompt {
